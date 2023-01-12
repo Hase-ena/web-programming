@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>colour</title>
+</head>
+<body>
+<script>
+function change(color)
+{
+	document.body.style.background=color;
+}
+function head(color)
+{
+	var c=document.getElementById("hdng");
+	document.c.style.background=color;
+}
+</script>
+<fieldset>
+<center>
+<fieldset width:10%>
+<h2>THIS IS A HEADING</h2>
+</fieldset>
+<h2 id="hdng">This Is A Paragraph</h2>
+<h3>Change webpage bg to:
+<input type="button" name="red" id="rd" value="R" onclick=change("red")>
+<input type="button" name="blue" id="bl" value="B" onclick=change("blue")>
+<input type="button" name="green" id="gr" value="G" onclick=change("green")></h3>
+<h3>Change heading bg to:
+<input type="button" name="pink" id="pnk" value="P" onclick=change("pink")>
+<input type="button" name="cyan" id="cy" value="C" onclick=change("cyan")>
+<input type="button" name="yellow" id="ylw" value="Y" onclick=change("yellow")></h3><br>
+</center>
+</fieldset>
+</body>
+</html>

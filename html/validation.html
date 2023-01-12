@@ -1,0 +1,185 @@
+<html>
+<head>
+<title>validation</title>
+<style>
+h3 {
+color:red;
+}
+</style>
+</head>
+<body>
+<fieldset>
+<center>
+<legend style="border:1px solid blue"><h3>REGISTRATION FORM</h3></legend>
+<form name="form" onsubmit="check();return false">
+<table>
+<tr>
+<th>User Id:</th>
+<td><input type="text" id="usrid" name="usrid" placeholder="eg:Hasi123*" required></td></tr>
+<tr>
+<th>password:</th>
+<td><input type="password" id="pswrd" name="pswrd" required></td></tr>
+<tr>
+<th>Name:</th>
+<td><input type="text" id="nme" name="nme" placeholder="eg:Haseena" required></td></tr>
+<tr>
+<th>Address:</th>
+<td><textarea rows="2" id="adrs" name="adrs" placeholder="eg:house name">
+</textarea></td></tr>
+<tr>
+<th>Country:</th>
+<td><select id="cntry">
+<option value="Australia">Australia</option>
+<option value="Belgium">Belgium</option>
+<option value="Canada">Canada</option>
+<option value="China">China</option>
+<option value="Egypt">Egypt</option>
+<option value="France">France</option>
+<option value="Georgia">Georgia</option>
+<option value="India">India</option>
+<option value="Malaysia">Malaysia</option>
+<option value="Nepal">Nepal</option>
+<option value="Oman">Oman</option>
+<option value="Pakistan">Pakistan</option>
+<option value="Thailand">Thailand</option>
+<option value="others">others</option>
+</td></tr>
+<tr>
+<th>Zip Code:</th>
+<td><input type="text" name="pin" maxlength="6" placeholder="123-345"></td>
+</tr>
+<tr>
+<th>Email:</th>
+<td><input type="email" id="email" name="email" placeholder="abc3@gmail.com" required></td></tr>
+<tr>
+<th>Gender</th>
+<td><input type="radio" name="gender">Male
+<input type="radio" name="gender">female
+<input type="radio" name="gender">Others</td></tr>
+<tr>
+<th>Language</th>
+<td><input type="checkbox" name="lng" value="English">English
+<input type="checkbox" name="lng" value="Hindi">Hindi
+<input type="checkbox" name="lng" value="Others">Others</td></tr>
+<tr>
+<th>About:</th>
+<td><textarea rows="3" cols="23" id="abvt" name="abvt">
+</textarea></td></tr>
+<tr>
+<td><input type="submit">
+</fieldset>
+<script>
+function check()
+{    
+     var userid=document.form.userid.value;
+     var pass=document.form.password.value;
+     var name=document.form.fullname.value;
+     var country=document.form.country.value;
+     var zip=document.form.zipcode.value;
+     var email=document.form.email.value;
+     var gen=document.form.s.value;
+     var pat = /^[A-Za-z]+$/;
+     var e=/[a-z0-9._%+-]+@[a-z.-]+\.[a-z]{3,3}$/
+
+    if (userid == "")
+     {
+                alert("Enter the userid");
+                document.form.userid.focus();
+                return false;
+            }
+   else if(userid.length <5 || userid.length >12)
+   {
+    alert("Length of userid is between 5 to 12")
+    document.form.userid.focus();
+                return false
+    }
+
+  if (pass == "")
+    {  
+          alert("Enter the password");
+          document.form.password.focus();
+          return false;
+     }
+ else if(pass.length <7 || pass.length >12)
+ {
+    alert("Length of password is between 7 to 12")
+    document.form.password.focus();
+                return false
+    }
+
+ if (name == "")
+{
+                alert("Enter the name");
+                document.form.fullname.focus();
+                return false;
+            }
+      else if(name.match(pat))
+     {
+
+     }
+   else
+     {
+     alert("Please Enter Albhabets only.");
+     return false;
+     }
+
+
+ if (country == "")
+{
+                alert("Select the country");
+                document.form.country.focus();
+                return false;
+            }
+
+ if (zip == "")
+{
+                alert("Enter the zipcode");
+                document.form.zipcode.focus();
+                return false;
+            }
+  else if(isNaN(zip))
+{
+                alert("Enter number only");
+                document.form.zipcode.focus();
+                return false;
+            }
+
+
+
+
+ if (email == "")
+{
+                alert("Enter the email");
+                document.form.email.focus();
+                return false;
+            }
+            else if(email.match(e))
+     {
+
+     }
+   else
+     {
+     alert("Please Enter email correctly.");
+     return false;
+     }
+
+ if (gen == "")
+{
+                alert("Select the gender");
+                // document.form.s.focus();
+                // return false;
+            }
+    if(document.getElementById('l').checked)
+    {
+        return true;
+    }
+    else
+    {
+        alert ("Select the language");
+        return false;
+    }
+</form>
+</center>
+</body>
+</html>
+
